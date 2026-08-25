@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Envelope with Letter</title>
+  <link rel="stylesheet" href="style.css" />
+  <script type="module" src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs"></script>
+</head>
+<body>
+  <canvas id="background-canvas"></canvas>
+
+  <div class="container">
+    <div class="envelope-wrapper">
+      <div class="envelope">
+        <div class="letter">
+          <div class="text">
+            <strong>Сайн уу?</strong>
+            <p>
+             
+            </p>
+            <br><br>
+          </div>
+        </div>
+      </div>
+      <div class="heart"></div>
+
+      <section class="animation hidden">
+        <dotlottie-player                                  src="https://lottie.host/fbd9a01d-31ab-4963-b68f-ab1a31e05f3c/cXEVQQ0hvy.lottie"
+         background="transpert"
+         style="width: 220px;height: 220px"
+         speed="1"
+         autoplay
+         loop
+        ></dotlottie-player>
+      </section>
+      
+      <section class="animation-left hidden">
+        <dotlottie-player
+          src="https://lottie.host/566bebe2-f868-4d4f-969f-c7f82f932923/HsjowCeZie.lottie"
+          background="transparent"
+          speed="1"
+          style="width: 270px; height: 270px;"
+          loop
+          autoplay
+        ></dotlottie-player>
+      </section>
+    </div>
+    <div class="forgive-box" id="forgiveBox">
+
+  <p>Намайг уучилсан уу? ❤️</p>
+
+  <button onclick="sendAnswer('Тийм, уучилсан ❤️')">
+    ❤️ Тийм
+  </button>
+
+  <button onclick="sendAnswer('Үгүй, одоохондоо 🥺')">
+    🥺 Үгүй
+  </button>
+
+  <div id="answer-message"></div>
+
+</div>
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
