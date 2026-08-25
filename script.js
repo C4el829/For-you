@@ -160,3 +160,31 @@ async function sendAnswer(answer) {
   }
 
 }
+.custom-answer {
+  margin-top: 15px;
+}
+
+.custom-answer p {
+  color: #d85b78;
+  font-size: 13px;
+}
+
+.custom-answer textarea {
+  width: 90%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  resize: none;
+  font-family: inherit;
+  outline: none;
+}
+
+.custom-answer button {
+  margin-top: 8px;
+  padding: 9px 16px;
+  border: none;
+  border-radius: 20px;
+  background: #ff6f91;
+  color: white;
+  cursor: pointer;
+}
