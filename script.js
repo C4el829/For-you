@@ -160,31 +160,65 @@ async function sendAnswer(answer) {
   }
 
 }
-.custom-answer {
-  margin-top: 15px;
-}
+async function sendCustomAnswer() {
 
-.custom-answer p {
-  color: #d85b78;
-  font-size: 13px;
-}
+  const message =
+    document.getElementById("customMessage").value.trim();
 
-.custom-answer textarea {
-  width: 90%;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 12px;
-  resize: none;
-  font-family: inherit;
-  outline: none;
-}
+  const result =
+    document.getElementById("custom-result");
 
-.custom-answer button {
-  margin-top: 8px;
-  padding: 9px 16px;
-  border: none;
-  border-radius: 20px;
-  background: #ff6f91;
-  color: white;
-  cursor: pointer;
+  if (!message) {
+    result.innerText =
+      "Хариугаа бичээрэй ❤️";
+    return;
+  }
+
+  result.innerText =
+    "Илгээж байна...";
+
+
+  try {
+
+    const response = await fetch(
+      "https://formspree.io/f/YOUR_FORMSPREE_ID",
+      {
+        method: "POST",
+
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+
+        body: JSON.stringify({
+          answer: message
+        })
+      }
+    );
+
+
+    if (response.ok) {
+
+      result.innerText =
+        "❤️ Хариу чинь надад хүрлээ.";
+
+      document.getElementById(
+        "customMessage"
+      ).value = "";
+
+    } else {
+
+      result.innerText =
+        "Илгээхэд алдаа гарлаа.";
+
+    }
+
+  } catch (error) {
+
+    console.error(error);
+
+    result.innerText =
+      "Интернетээ шалгаарай.";
+
+  }
 }
